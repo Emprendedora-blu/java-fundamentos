@@ -41,12 +41,48 @@ public class Colecciones {
     }
 
     public static void ejemploHashSet() {
-        Set<String> colores = new HashSet<>();
-        colores.add("Rojo");
-        colores.add("Verde");
-        colores.add("Azul");
-        colores.add("Rojo");
-        System.out.println("Colores: " + colores);
+        System.out.println("=== Ejemplo HashSet ===");
+
+        Set<String> cursos = new HashSet<>();
+
+        // Agregar elementos
+        cursos.add("Java");
+        cursos.add("Python");
+        cursos.add("JavaScript");
+        cursos.add("Java"); // duplicado: HashSet lo ignora automáticamente
+        cursos.add("SQL");
+
+        System.out.println("Cursos registrados: " + cursos);
+        System.out.println("Total de cursos (sin duplicados): " + cursos.size());
+
+        // Verificar si un elemento existe
+        System.out.println("¿Existe Java? " + cursos.contains("Java"));
+        System.out.println("¿Existe PHP? " + cursos.contains("PHP"));
+
+        // Recorrer el HashSet
+        System.out.println("--- Lista de cursos ---");
+        for (String curso : cursos) {
+            System.out.println("  Curso: " + curso);
+        }
+
+        // Eliminar un elemento
+        cursos.remove("SQL");
+        System.out.println("Cursos después de eliminar SQL: " + cursos);
+
+        // Unión de dos conjuntos
+        Set<String> cursosTarde = new HashSet<>();
+        cursosTarde.add("Java");
+        cursosTarde.add("Diseño Web");
+        cursosTarde.add("Base de Datos");
+
+        Set<String> union = new HashSet<>(cursos);
+        union.addAll(cursosTarde);
+        System.out.println("Unión de cursos: " + union);
+
+        // Intersección (cursos en común)
+        Set<String> interseccion = new HashSet<>(cursos);
+        interseccion.retainAll(cursosTarde);
+        System.out.println("Cursos en común: " + interseccion);
     }
 
     public static void ejemploHashMap() {
@@ -65,8 +101,7 @@ public class Colecciones {
     }
 
     public static void main(String[] args) {
-        EjemploArray();
-
+        ejemploHashSet();
     }
 
 }
