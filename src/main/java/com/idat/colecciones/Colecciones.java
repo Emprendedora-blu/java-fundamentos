@@ -66,9 +66,7 @@ public class Colecciones {
 
     public static void main(String[] args) {
         EjemploArray();
-        ejemploArrayList();
-        ejemploHashSet();
-        ejemploHashMap();
+
     }
 
 }
